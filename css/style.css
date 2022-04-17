@@ -1,0 +1,241 @@
+/*---------- Start font google --------------*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap");
+/*----------End font google --------------*/
+:root {
+   --dark-color: #19283f;
+   --green-color: #33d1cc;
+   --red-color: #ff3150;
+   --yellow-color: #ffc400;
+   --secction-color: #eff7fa;
+}
+body {
+   font-family: "Roboto", sans-serif;
+}
+.main-title::after {
+   content: "";
+   position: absolute;
+   width: 120px;
+   height: 2px;
+   background-color: var(--green-color);
+   bottom: -20px;
+   left: 50%;
+   transform: translateX(-50%);
+}
+/* ::selection {
+   background-color: var(--dark-color);
+   color: var(--yellow-color);
+} */
+/* ----------- Start Nav ---------------*/
+.navbar {
+   background-color: var(--dark-color);
+}
+.navbar .navbar-nav .nav-link {
+   color: #fff;
+}
+.navbar .navbar-nav .nav-link.active,
+.navbar .navbar-nav .nav-link:focus,
+.navbar .navbar-nav .nav-link:hover {
+   color: var(--green-color);
+}
+.navbar .navbar-toggler {
+   color: #fff;
+   box-shadow: unset;
+   border: 1px solid #fff;
+   font-size: 1.6rem;
+}
+.navbar .navbar-toggler[aria-expanded="true"] {
+   border-color: var(--green-color);
+}
+.navbar .social-nav {
+   color: var(--green-color);
+   border-left: 1px solid var(--green-color);
+}
+.main-btn {
+   background-color: var(--red-color);
+   color: var(--yellow-color);
+}
+/* ----------- End Nav ---------------*/
+/* ----------- Start Landing ---------------*/
+.landing {
+   background-color: var(--dark-color);
+}
+/* ----------- End Landing ---------------*/
+/* ----------- Start Featchers ---------------*/
+.fetchers .fet .icon-holder {
+   height: 200px;
+}
+.fetchers .fet .icon-holder .number {
+   font-size: 12rem;
+   color: var(--secction-color);
+}
+.fetchers .fet .icon-holder .icon {
+   color: var(--green-color);
+}
+.fetchers .fet h3 {
+   color: var(--yellow-color);
+}
+/* ----------- End Featchers ---------------*/
+/* ----------- Start Our Work ---------------*/
+.our-work {
+   background-color: var(--secction-color);
+}
+.our-work ul li {
+   cursor: pointer;
+   font-size: 1.1rem;
+   padding: 7px;
+}
+.our-work ul li.active {
+   background-color: var(--red-color);
+   padding: 0.5rem 1rem;
+   border-radius: 50px;
+   color: var(--yellow-color);
+}
+.our-work ul li:not(.active):hover {
+   color: var(--red-color);
+}
+.our-work .box {
+   background-color: #fff;
+   color: #fff;
+   font-weight: 800;
+   font-size: 1.5rem;
+   letter-spacing: 2px;
+   padding: 5px;
+   overflow: hidden;
+}
+.our-work .box::before {
+   content: attr(data-work);
+   width: calc(100% - 10px);
+   height: calc(100% - 10px);
+   background-color: rgb(51 209 204 / 70%);
+   position: absolute;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: transform 0.5s;
+   transform: translateX(calc(-100% - 5px));
+}
+.our-work .box:hover::before {
+   transform: translateX(0);
+}
+/* ----------- End Our Work ---------------*/
+/* ----------- Start Meet Team ---------------*/
+.meet-team {
+   background-color: var(--secction-color);
+}
+.meet-team .title-meet h2 {
+   color: var(--yellow-color);
+   font-weight: 700;
+}
+/* >>>>>>>>>>>>> ------- Start animation for card ------------ <<<<<<<<<<<<<< */
+.meet-team img,
+.blog .card img {
+   filter: grayscale(100%);
+   transition: filter 0.7s, opacity 0.7s;
+}
+.meet-team .card:hover img,
+.blog .card:hover img {
+   filter: grayscale(0);
+   opacity: 0.8;
+}
+.meet-team .card::after,
+.meet-team .card::before,
+.blog .card::after,
+.blog .card::before {
+   content: "";
+   position: absolute;
+   width: 0;
+   height: 0;
+   border: 2px solid transparent;
+   top: -2px;
+   border-radius: 5px;
+}
+.meet-team .card:hover::after,
+.blog .card:hover::after {
+   animation: run-border 0.7s linear both;
+}
+.meet-team .card:hover::before,
+.blog .card:hover::before {
+   animation: run-border-2 0.7s linear both;
+}
+@keyframes run-border {
+   0% {
+      width: 0;
+      height: 0;
+      border-color: #ff512f transparent transparent transparent;
+   }
+   50% {
+      border-color: #ff512f #ff512f transparent transparent;
+      width: 101%;
+      height: 0;
+   }
+   100% {
+      border-color: #ff512f #ff512f transparent transparent;
+      width: 101%;
+      height: 101%;
+   }
+}
+@keyframes run-border-2 {
+   0% {
+      width: 0;
+      height: 0;
+      border-color: transparent transparent transparent #dd2476;
+   }
+   50% {
+      width: 0;
+      height: 101%;
+      border-color: transparent transparent #dd2476 #dd2476;
+   }
+   100% {
+      width: 101%;
+      height: 101%;
+      border-color: transparent transparent #dd2476 #dd2476;
+   }
+}
+/* >>>>>>>>>>>>> ------- End animation for card ------------ <<<<<<<<<<<<<< */
+/* ----------- End Meet Team ---------------*/
+/* ----------- Start Project ---------------*/
+.start-project {
+   background-color: var(--dark-color);
+}
+/* ----------- End Project ---------------*/
+/* ----------- Start subscrip ---------------*/
+.subscrip {
+   background-color: var(--yellow-color);
+}
+.subscrip .entr-mail {
+   border: none;
+   border-bottom: 1px solid #fff;
+   border-radius: 0;
+   outline: unset;
+   display: block;
+   background-color: transparent;
+   caret-color: #fff;
+}
+.subscrip .entr-mail::placeholder {
+   color: #fff;
+}
+.subscrip .entr-mail:focus {
+   box-shadow: unset;
+}
+/* ----------- End subscrip ---------------*/
+/* ----------- Start Footer ---------------*/
+footer {
+   background-color: var(--dark-color);
+}
+footer .social-footer a {
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background-color: var(--green-color);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   transition: color 0.3s;
+}
+footer .social-footer a:hover {
+   color: #19283f !important;
+}
+footer li {
+   padding: 5px 0;
+}
+/* ----------- End Footer ---------------*/
